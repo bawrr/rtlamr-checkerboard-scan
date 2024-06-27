@@ -23,7 +23,7 @@ MeterScan Wizard is a powerful tool for scanning and analyzing power or gas mete
 
 3. **Find your WSL IP address:**
    - Open Task Manager.
-   - Go to the `Performance` tab and select `Ethernet`.
+   - Go to the `Performance` tab and select `Ethernet vEthernet (WSL)`.
    - Note the `IPv4 address`.
 
 4. **Start `rtl_tcp`:**
@@ -55,20 +55,16 @@ MeterScan Wizard is a powerful tool for scanning and analyzing power or gas mete
      ```
 
 4. **Install `rtlamr`:**
-   - Download `rtlamr` from [here](https://github.com/bemasher/rtlamr).
-   - Extract the files and move the executable to `/usr/local/bin` to add it to your path:
-     ```sh
-     sudo mv rtlamr /usr/local/bin/
-     ```
+   - Follow instructinos from [here](https://github.com/bemasher/rtlamr).
 
 ## Usage
 
 ### Running the Scan Script
 
 1. **Configure the script:**
-   - Open `meter_scan.sh` and replace the `ENDPOINT_ID` with your meter's endpoint ID.
+   - Open `meter_scan.sh` and replace (optional) the `ENDPOINT_ID` with your meter's endpoint ID.
    - Replace `SERVER_IP` with the WSL IP address you noted earlier.
-   - Adjust the frequency and gain ranges if necessary.
+   - Adjust the frequency and gain ranges as desired.
 
 2. **Run the script:**
    - In WSL, navigate to the directory containing `meter_scan.sh`.
@@ -84,7 +80,7 @@ MeterScan Wizard is a powerful tool for scanning and analyzing power or gas mete
 ### Analyzing the Logs
 
 1. **Process the log files:**
-   - In WSL, navigate to the directory containing `meter_analysis.py`.
+   - In WSL, navigate to the directory containing both `meter_analysis.py` and the log files from `meter_scan.py`.
    - Run the script:
      ```sh
      python3 meter_analysis.py
